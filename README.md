@@ -4,9 +4,9 @@ A responsive Task Manager application built with **React and Vite**. This applic
 
 ## 🚀 Live Demo
 
-[View Live Application](https://task-manager.vercel.app)
+[View Live Application](https://taskmanager-teal-omega.vercel.app?_vercel_share=yxtpaLLCj2jdaHVOsvDhhvhe55mIGF1G)
 
-> Replace this URL with your actual Vercel deployment URL.
+> Replace this URL with your actual Vercel deployment URL
 
 ## 📸 Features
 
@@ -69,7 +69,7 @@ Follow these instructions to run the project locally.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/task-manager-react.git
+git clone https://github.com/AbhishekBawane/Task-Manager-
 ```
 
 ### 2. Navigate to the project directory
@@ -141,10 +141,6 @@ Tasks can be sorted using:
 - Due Date: Earliest deadlines appear first, and tasks without due dates appear last.
 - Priority: High → Medium → Low.
 
-### Overdue Detection
-
-A task is marked as overdue when its due date has passed and it is not completed.
-
 ## 🌐 Deployment
 
 This application can be deployed using Vercel.
@@ -169,8 +165,7 @@ This application can be deployed using Vercel.
 
 **Abhishek Bawane**
 
-- GitHub: [Your GitHub Profile](https://github.com/your-username)
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/)
+- GitHub: [Your GitHub Profile](https://github.com/AbhishekBawane)
 
 ## 📄 License
 
