@@ -1,0 +1,1032 @@
+
+/* =================================
+   1. MAIN APP CONTAINER
+================================= */
+
+#center {
+  width: 100%;
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  align-items: stretch;
+  color: #1e293b;
+}
+
+.app-container {
+  padding: 0;
+}
+
+
+/* =================================
+   2. HEADER
+================================= */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 22px;
+
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 22px;
+}
+
+.eyebrow {
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.app-header h1 {
+  font-size: 34px;
+  font-weight: 750;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 14px;
+}
+
+
+/* =================================
+   3. TASK COUNTER
+================================= */
+
+.task-counter {
+  background: #eef2ff;
+  padding: 15px 22px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+}
+
+.task-counter span {
+  font-size: 26px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.task-counter small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+
+/* =================================
+   4. TASK FORM
+================================= */
+
+.task-form {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #e9edf3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  flex: 1;
+  min-width: 140px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+
+  outline: none;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-error {
+  color: #dc2626 !important;
+  font-size: 12px !important;
+}
+
+
+/* =================================
+   5. ADD TASK BUTTON
+================================= */
+
+.add-task-btn {
+  padding: 12px 18px;
+
+  background: #6366f1;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 7px;
+
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.add-task-btn:hover {
+  background: #4f46e5;
+}
+
+
+/* Floating add button, if used */
+
+.add-task {
+  position: fixed;
+  z-index: 10;
+
+  width: 48px;
+  height: 48px;
+
+  right: 20px;
+  bottom: 20px;
+
+  background: #4c6ea5;
+  color: #ffffff;
+
+  font-size: 28px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.2s, background 0.2s;
+}
+
+.add-task:hover {
+  background: #345786;
+  transform: translateY(-3px);
+}
+
+
+/* =================================
+   6. TASK LIST
+================================= */
+
+.task-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+/* =================================
+   7. INDIVIDUAL TASK CARD
+================================= */
+
+.task-card {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 20px;
+
+  background: #ffffff;
+  border: 1px solid #e9edf3;
+  border-radius: 12px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Checkbox */
+
+.task-card input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+  accent-color: #6366f1;
+
+  cursor: pointer;
+}
+
+
+/* =================================
+   8. TASK INFORMATION
+================================= */
+
+.task-info {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  background: transparent;
+}
+
+.task-info h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+
+  margin-bottom: 2px;
+  overflow-wrap: anywhere;
+}
+
+.task-info p {
+  font-size: 12px;
+  color: #64748b;
+}
+
+
+/* Completed task */
+
+.task-info h3.completed {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+
+/* =================================
+   9. PRIORITY BADGES
+================================= */
+
+.priority {
+  padding: 6px 12px;
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.medium {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.low {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+
+/* =================================
+   10. OVERDUE LABEL
+================================= */
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.overdue-label {
+  background: #fee2e2;
+  color: #dc2626;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  padding: 4px 9px;
+  border-radius: 20px;
+
+  white-space: nowrap;
+}
+
+
+/* =================================
+   11. EDIT AND DELETE ACTIONS
+================================= */
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  padding: 7px 11px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+
+/* Edit button */
+
+.edit-btn {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.edit-btn:hover {
+  background: #e0e7ff;
+}
+
+
+/* Delete button */
+
+.delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+}
+
+
+/* =================================
+   12. EDIT TASK MODE
+================================= */
+
+.edit-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  min-width: 0;
+  gap: 9px;
+}
+
+
+/* Important: Edit input must not inherit
+   the checkbox width */
+
+.task-card .edit-input {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+
+  padding: 9px 12px;
+
+  border: 1px solid #6366f1;
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #1e293b;
+
+  font-size: 14px;
+}
+
+.task-card .edit-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* Save and cancel buttons */
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-actions button {
+  padding: 7px 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.save-btn:hover {
+  background: #15803d;
+}
+
+.cancel-btn {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.cancel-btn:hover {
+  background: #cbd5e1;
+}
+
+
+/* =================================
+   13. LOADING AND ERROR STATES
+================================= */
+
+.status-container {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  padding: 20px;
+  text-align: center;
+}
+
+.status-container p {
+  color: #64748b;
+}
+
+.status-container button {
+  background: #6366f1;
+  color: #ffffff;
+
+  border: none;
+  padding: 11px 22px;
+
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.status-container button:hover {
+  background: #4f46e5;
+}
+
+
+/* Loader */
+
+.loader {
+  width: 35px;
+  height: 35px;
+
+  border: 4px solid #e0e7ff;
+  border-top-color: #6366f1;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =================================
+   14. FOCUS ACCESSIBILITY
+================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 3px;
+}
+
+
+/* =================================
+   15. TABLET RESPONSIVENESS
+================================= */
+
+@media (max-width: 768px) {
+
+  #center {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .app-header h1 {
+    font-size: 29px;
+  }
+
+  .task-card {
+    padding: 16px;
+  }
+
+  .task-actions {
+    gap: 6px;
+  }
+
+}
+
+
+/* =================================
+   16. MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 600px) {
+
+  #center {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 12px;
+    gap: 18px;
+  }
+
+  .app-header {
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .app-header h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .task-counter {
+    padding: 10px 12px;
+  }
+
+  .task-counter span {
+    font-size: 22px;
+  }
+
+
+  /* Form */
+
+  .task-form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .form-group {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .add-task-btn {
+    width: 100%;
+  }
+
+
+  /* Task card */
+
+  .task-card {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px 12px;
+  }
+
+  .task-info {
+    flex: 1 1 130px;
+    min-width: 0;
+  }
+
+  .task-info h3 {
+    font-size: 14px;
+  }
+
+
+  /* Priority */
+
+  .priority {
+    padding: 5px 9px;
+    font-size: 10px;
+  }
+
+
+  /* Buttons */
+
+  .task-actions {
+    gap: 5px;
+  }
+
+  .task-actions button {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+
+  /* Floating add button */
+
+  .add-task {
+    width: 45px;
+    height: 45px;
+
+    right: 15px;
+    bottom: 15px;
+  }
+
+}
+
+
+/* =================================
+   17. SMALL PHONE RESPONSIVENESS
+================================= */
+
+@media (max-width: 380px) {
+
+  .app-header {
+    padding: 13px;
+    gap: 8px;
+  }
+
+  .app-header h1 {
+    font-size: 23px;
+  }
+
+  .task-counter {
+    padding: 9px;
+  }
+
+  .task-card {
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  .task-actions button {
+    padding: 6px 7px;
+    font-size: 10px;
+  }
+
+}
+
+/* =================================
+   TASK SECTION
+================================= */
+
+.task-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* =================================
+   FILTER TABS
+================================= */
+
+.task-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 16px;
+
+  background: #ffffff;
+  color: #64748b;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.filter-btn.active {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+}
+
+
+/* =================================
+   SEARCH AND SORT
+================================= */
+
+.task-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-search,
+.sort-select {
+  height: 42px;
+  padding: 10px 12px;
+
+  background: #ffffff;
+  color: #1e293b;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  outline: none;
+  font-size: 13px;
+}
+
+.task-search {
+  flex: 1;
+  min-width: 0;
+}
+
+.sort-select {
+  cursor: pointer;
+}
+
+.task-search:focus,
+.sort-select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+
+/* =================================
+   EMPTY STATE
+================================= */
+
+.empty-state {
+  width: 100%;
+  padding: 45px 20px;
+
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+.empty-state h3 {
+  color: #334155;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 600px) {
+
+  .task-toolbar {
+    gap: 12px;
+  }
+
+  .filter-tabs {
+    gap: 6px;
+  }
+
+  .filter-btn {
+    flex: 1;
+    padding: 9px 7px;
+    font-size: 11px;
+  }
+
+  .task-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-search,
+  .sort-select {
+    width: 100%;
+  }
+
+}
+
+/* =================================
+   FLOATING ADD TASK MODAL
+================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+
+  z-index: 1000;
+}
+
+
+/* Modal card */
+
+.task-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 520px;
+
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+
+  padding: 30px;
+
+  background: #ffffff;
+  border-radius: 18px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+  animation: modalAppear 0.2s ease-out;
+}
+
+
+/* Modal heading */
+
+.task-modal h2 {
+  color: #1e293b;
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.modal-subtitle {
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+
+/* Close button */
+
+.modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1f5f9;
+  color: #475569;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+
+/* Form inside modal */
+
+.task-modal .task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 18px;
+
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+
+/* Make inputs full width */
+
+.task-modal .form-group {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* Submit button */
+
+.task-modal .add-task-btn {
+  width: 100%;
+  padding: 13px;
+}
+
+
+/* Modal animation */
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* Mobile modal */
+
+@media (max-width: 600px) {
+
+  .modal-overlay {
+    padding: 15px;
+  }
+
+  .task-modal {
+    padding: 25px 18px;
+    border-radius: 15px;
+  }
+
+  .task-modal h2 {
+    font-size: 21px;
+  }
+
+}
+
