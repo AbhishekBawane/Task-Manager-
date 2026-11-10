@@ -6,8 +6,6 @@ A responsive Task Manager application built with **React and Vite**. This applic
 
 [View Live Application](https://taskmanager-teal-omega.vercel.app?_vercel_share=yxtpaLLCj2jdaHVOsvDhhvhe55mIGF1G)
 
-> Replace this URL with your actual Vercel deployment URL
-
 ## 📸 Features
 
 - **Add Tasks:** Create tasks with a title, priority, and optional due date.
